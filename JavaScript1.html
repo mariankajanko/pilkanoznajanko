@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIiSKwE</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css">
+    <link rel="stylesheet" type="text/css" href="Menu.css">
+    <style>
+        /* Dodatkowe style dla zakładu */
+        #teams-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            #teams-table th, #teams-table td {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: center;
+            }
+
+            #teams-table th {
+                background-color: dodgerblue;
+                color: white;
+            }
+
+        #add-team-form {
+            text-align: center;
+        }
+
+            #add-team-form input[type="text"] {
+                padding: 8px;
+                margin: 5px;
+            }
+
+            #add-team-form input[type="submit"] {
+                padding: 8px 20px;
+                background-color: dodgerblue;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <header style="background-color:dodgerblue">
+        <h1>Lech Poznań</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            
+                <li><a href="Index.html" target="_self">Strona główna</a></li>
+                <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+                <li><a href="Info.html" target="_self">Informacje</a></li>
+                <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+                <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+                <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+                <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+                <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+                <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+                <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+                <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+           
+        </ul>
+    </nav>
+    <article>
+        <h2 style="text-align:center;">Zakłady - Miejsca w Ekstraklasie</h2>
+        <p style="text-align:center;">Ustal kolejność miejsc w tabeli Ekstraklasy</p>
+        <p style="text-align:center; font-weight:bold"> I JUŻ DZIŚ WYGRAJ NIESAMOWITE NAGRODY!</p>
+        <p style="text-align:center;">Prześlij utworzoną przez siebie kolejność wszystkich drużyn i ciesz się wygraną!</p>
+        <table id="teams-table">
+            <thead>
+                <tr>
+                    <th>Pozycja</th>
+                    <th>Drużyna</th>
+                </tr>
+            </thead>
+            <tbody id="teams-list">
+                <!-- Tutaj będą wyświetlane drużyny -->
+            </tbody>
+        </table>
+        <form id="add-team-form">
+            <input type="text" id="team-name" placeholder="Nazwa drużyny">
+            <input type="text" id="team-position" placeholder="Pozycja">
+            <input type="submit" value="Dodaj drużynę">
+        </form>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Projekt wykonany przez Mariannę Jankowską.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("add-team-form");
+            const tableBody = document.getElementById("teams-list");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const teamName = document.getElementById("team-name").value;
+                const teamPosition = document.getElementById("team-position").value;
+
+                if (teamName && teamPosition) {
+                    const newRow = document.createElement("tr");
+                    newRow.innerHTML = `
+                            <td>${teamPosition}</td>
+                            <td>${teamName}</td>
+                        `;
+                    tableBody.appendChild(newRow);
+                    form.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

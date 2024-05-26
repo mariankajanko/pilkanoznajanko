@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz o Lechu Poznañ</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <link rel="stylesheet" type="text/css" href="Menu.css" />
+    <style>
+        #quiz {
+            text-align: center;
+        }
+
+        #question {
+            margin-bottom: 20px;
+        }
+
+        #choices input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color:dodgerblue">
+        <h1>Pi³ka No¿na - Lech Poznañ</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona g³ówna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zg³oszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Pi³karze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza dru¿yna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodz¹ce mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="prawdziwaprezentacja.html" target="_blank">Prezentacja klubu</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2>Quiz o Lechu Poznañ</h2>
+        <div id="quiz">
+            <div id="question"></div>
+            <div id="choices"></div>
+            <button onclick="checkAnswer()">Dalej</button>
+        </div>
+        <div id="result"></div>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Projekt wykonany przez Mariannê Jankowsk¹
+    </footer>
+
+    <script>
+        var questions = [
+            {
+                question: "Kiedy zosta³ za³o¿ony klub Lech Poznañ?",
+                choices: ["1920", "1941", "1918", "1954"],
+                correctAnswer: "1918"
+            },
+            {
+                question: "Jak nazywa siê stadion, na którym Lech Poznañ rozgrywa swoje mecze domowe?",
+                choices: ["Stadion Miejski", "Stadion Lechii", "Stadion Narodowy", "Stadion Warty"],
+                correctAnswer: "Stadion Miejski"
+            }
+            // Dodaj kolejne pytania tutaj...
+        ];
+
+        var currentQuestion = 0;
+        var score = 0;
+
+        function showQuestion() {
+            var q = questions[currentQuestion];
+            document.getElementById("question").innerHTML = q.question;
+            var choicesHTML = "";
+            for (var i = 0; i < q.choices.length; i++) {
+                choicesHTML += "<input type='radio' name='choice' value='" + q.choices[i] + "'>" + q.choices[i] + "<br>";
+            }
+            document.getElementById("choices").innerHTML = choicesHTML;
+        }
+
+        function checkAnswer() {
+            var userChoice = document.querySelector("input[name='choice']:checked");
+            if (!userChoice) {
+                alert("Wybierz odpowiedŸ!");
+                return;
+            }
+            var selectedAnswer = userChoice.value;
+            var correctAnswer = questions[currentQuestion].correctAnswer;
+            if (selectedAnswer === correctAnswer) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            var resultHTML = "<h3>Twój wynik: " + score + " z " + questions.length + "</h3>";
+            document.getElementById("quiz").innerHTML = resultHTML;
+            var resultHTML = "<h3>Twój wynik: " + score + " z " + questions.length + "</h3>";
+            document.getElementById("quiz").innerHTML = resultHTML;
+            var resultMessage = score >= (questions.length / 2) ? "Gratulacje, œwietny wynik!" : "Niestety, mo¿esz lepiej.";
+            document.getElementById("result").innerHTML = resultMessage;
+        }
+
+        // Wywo³aj funkcjê pokazuj¹c¹ pierwsze pytanie
+        showQuestion();
+    </script>
+</body>
+</html>

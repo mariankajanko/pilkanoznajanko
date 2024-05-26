@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Piłka Nożna</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <link rel="stylesheet" type="text/css" href="Menu.css" />
+    <style>
+        /* Dodatkowe style */
+        #map-container {
+            position: relative;
+            width: 100%; /* Dostosuj szerokość obrazka */
+            margin: 0 auto;
+        }
+
+            #map-container img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+        #map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color:dodgerblue">
+        <h1>Piłka nożna</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+        </ul>
+    </nav>
+    <article>
+        <center>
+            
+            <h2> Stadion Lecha Poznań</h2>
+
+            <p style="text-align:center; font-size:25px;"> Aby sprawdzić widok z każdej trybuny</p>
+            <p style="text-align: center; font-size: 30px; font-weight: bold;"> naciśij dowolne miejsce na stadionie!</p>
+            <img src="stadion.jpg" alt="Obrazek" usemap="#image-map">
+            <map name="image-map">
+                <area shape="poly" coords="4,257,7,148,291,116,321,196" alt="poly" title="Kocioł" href="widok z kotla.jpg">
+                <area shape="poly" coords="4,367,96,363,554,561,421,746,15,738" alt="poly" title="Anioły" href="zaniola.jpg">
+                <area shape="poly" coords="996,249,930,292,721,534,784,612,987,653" alt="poly" title="IV trybuna" href="ztej4.jpg">
+                <area shape="poly" coords="333,192,474,60,985,54,995,228,896,269" alt="poly" title="Czapczyka" href="zczapczyka.jpg">
+
+
+            </map>
+        </center>
+        
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Projeky wykonany przez Mariannę Jankowską.
+    </footer>
+
+    <script>
+        // Funkcja wyświetlająca zdjęcie po kliknięciu w obszar mapy
+        function showImage(imageSrc) {
+            const article = document.querySelector('article');
+            article.innerHTML = `<img src="${imageSrc}" alt="Pokazane zdjęcie">`;
+        }
+    </script>
+</body>
+</html>

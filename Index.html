@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>PilkaNoznaLechPoznan</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <link rel="stylesheet" type="text/css" href="Menu.css" />
+    <style>
+        h2 {
+            width: 80%;
+            text-align: center;
+        }
+
+        .gallery-container {
+            text-align: center;
+            margin: 2% auto;
+        }
+
+            .gallery-container img {
+                width: 60%;
+                max-width: 70%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+
+        .button-container {
+            text-align: center;
+            margin: 2%;
+        }
+
+            .button-container button {
+                margin: 2%;
+                padding: 3%;
+                font-size: 20%;
+            }
+    </style>
+</head>
+<body onload="Start()">
+    <header style="background-color:dodgerblue">
+        <h1>Lech Poznań</h1>
+    </header>
+    <nav>
+       
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+
+        </ul>
+    </nav>
+    <article>
+
+        <h2 style="text-align:center;">Klub piłkarski z nadziejami i (nie)skończoną ambicją</h2>
+        <img src="lech_poznan.jpg" alt="Herb Lecha Poznań" style="width:100%; max-width:800px; display: block; margin: 0 auto;" />
+        <div style="margin: 5%; text-align:center"></div>
+        <p style="font-size: 18px; line-height: 1.6; color: black; text-align: center;">
+            Lech Poznań to jedna z najbardziej rozpoznawalnych marek piłkarskich w Polsce, pełna historii, tradycji i pasji. Jako klub piłkarski o bogatym dziedzictwie, Lech Poznań nie tylko rywalizuje na boisku, ale również inspiruje fanów do zaangażowania się w piłkę nożną.
+        </p>
+        <p style="font-size: 16px; line-height: 1.6; color: black; text-align: center;">Założony w 1922 roku, Lech Poznań jest nie tylko drużyną, ale także symbolem miasta Poznań. Od wielu lat klub przyciąga nie tylko lokalnych kibiców, ale także pasjonatów piłki nożnej z całej Polski.</p>
+        <p style="font-size: 16px; line-height: 1.6; color: black; text-align: center;">Od czasu swojego założenia klub osiągnął wiele sukcesów, w tym 8 tytułów Mistrza Polski, 5 zwycięstw w Pucharze Polski oraz 6 triumfów w Superpucharze Polski. Te osiągnięcia są dowodem na nieustanne dążenie klubu do doskonałości.</p>
+        <p style="font-size: 16px; line-height: 1.6; color: black; text-align: center;">Jednak Lech Poznań to nie tylko sukcesy na boisku. Klub angażuje się również w działalność społeczną, wspierając lokalne społeczności i inicjatywy charytatywne. Poprzez różnorodne projekty społeczne, Lech Poznań wzbogaca życie mieszkańców Poznania i okolic.</p>
+        <p style="font-size: 20px; line-height: 1.6; color: black; text-align: center; font-weight:bold;">Poznaj naszych kluczowych zawodników!</p>
+        <div class="gallery-container">
+            <img id="galleryImage" src="image1.jpg" alt="Top 5" />
+            <div class="button-container">
+                <button onclick="firstImage()">Pierwszy</button>
+                <button onclick="prevImage()">Poprzedni</button>
+                <button onclick="nextImage()">Następny</button>
+                <button onclick="lastImage()">Ostatni</button>
+            </div>
+        </div>
+
+        <script>
+            const images = [
+                'velde.jpg',
+                'karlstrom.jpg',
+                'marchwinski.jpg',
+                'salomon.jpg',
+                'ishak.jpg'
+            ];
+
+            let currentIndex = 0;
+
+            function updateImage() {
+                document.getElementById('galleryImage').src = images[currentIndex];
+            }
+
+            function firstImage() {
+                currentIndex = 0;
+                updateImage();
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateImage();
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                updateImage();
+            }
+
+            function lastImage() {
+                currentIndex = images.length - 1;
+                updateImage();
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (event.key === 'ArrowRight') {
+                    nextImage();
+                }
+            });
+        </script>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        <p>Projekt został stworzony przez Mariannę Jankowską.</p>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+    </footer>
+</body>
+</html>

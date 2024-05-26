@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tabela w HTML</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <link rel="stylesheet" type="text/css" href="Menu.css" />
+    <style>
+      
+        #PoleTabeli
+        {
+            width: 60%;
+            height: 40%;
+            border: 0px;
+            padding: 0px;
+            margin: auto;
+            background-color: none;
+        }
+
+        
+        * {
+            font-family: Times New Roman;
+        }
+
+        table {
+           
+            padding: 0%;
+            border-spacing: 0px;
+            text-align: center;
+            background-color: white;
+        }
+
+        
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        
+        tr th {
+            /*definicja czcionki*/
+            font-family: Cambria;
+            font-style: italic;
+            font-weight: bolder;
+            font-size: 13px;
+          
+            color: black;
+            padding: 3px;
+            background-color: white;
+        }
+
+        tr td {
+            font-family: Calibri;
+            font-weight: lighter;
+            font-size: smaller;
+            color: black;
+            border-color: black;
+            padding: 5px;
+        }
+
+        
+        th.godziny {
+            width: 18px;
+        }
+
+        td.wolny {
+            background-color: gray;
+        }
+
+        td.zajety {
+            background-color: dodgerblue;
+            color: black;
+        }
+
+        tbody #name {
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color:dodgerblue; border:3px solid black">
+        <h1>Lech Poznań</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+        </ul>
+    </nav>
+    <article>
+        <div style="margin: 2%;text-align:center">
+            <h2>O Akademii Lecha Poznań:</h2>
+            <h2>
+                Chcesz dowiedzieć się więcej o swoich możliwościach piłkarskich?
+            </h2>
+            <h2>
+                A może zależy Ci na dobrej zabawie?
+            </h2>
+            <h2>
+                Już dziś przekonaj się, dołączając do Akademii Lecha Poznań!
+            </h2>
+            <p style="text-align: center;">
+                Akademia Lecha Poznań to miejsce, gdzie młode talenty piłkarskie mają szansę rozwijać swoje umiejętności pod okiem doświadczonych trenerów. Nasi trenerzy to specjaliści w swojej dziedzinie, którzy każdego dnia pracują nad rozwojem fizycznym i mentalnym swoich podopiecznych.
+            </p>
+            <p style="text-align: center;">
+                Poniżej przedstawiamy szczegółowy harmonogram dostępności naszych trenerów, abyście mogli lepiej zaplanować swoje zajęcia i treningi.
+            </p>
+            </div>
+            <div id="PoleTabeli">
+                <h2>Tabela dostępności trenerów Akademii </h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Lp.</th>
+                            <th colspan="2">Trener</th>
+                            <th rowspan="2">Boisko</th>
+                            <th colspan="12">Godziny</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Imię</th>
+                            <th rowspan="2">Nazwisko</th>
+                            <th class="godziny">7</th>
+                            <th class="godziny">8</th>
+                            <th class="godziny">9</th>
+                            <th class="godziny">10</th>
+                            <th class="godziny">11</th>
+                            <th class="godziny">12</th>
+                            <th class="godziny">13</th>
+                            <th class="godziny">14</th>
+                            <th class="godziny">15</th>
+                            <th class="godziny">16</th>
+                            <th class="godziny">17</th>
+                            <th class="godziny">18</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td id="name">Jan</td>
+                            <td id="name">Kowalski</td>
+                            <td rowspan="2">1</td>
+                            <td colspan="3" class="zajety">7:00-10:00</td>
+                            <td colspan="9" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td id="name">Maria</td>
+                            <td id="name">Nowak</td>
+                            <td colspan="6" class="wolny"></td>
+                            <td colspan="6" class="zajety">13:00-19:00</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td id="name">Karol</td>
+                            <td id="name">Dobry</td>
+                            <td>2</td>
+                            <td colspan="6" class="zajety">7:30-13:00</td>
+                            <td colspan="6" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td id="name">Łukasz</td>
+                            <td id="name">Chudy</td>
+                            <td rowspan="2">3</td>
+                            <td colspan="3" class="zajety">7:00-10:00</td>
+                            <td colspan="3" class="wolny"></td>
+                            <td colspan="3" class="zajety">13:00-16:00</td>
+                            <td colspan="3" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td id="name">Zofia</td>
+                            <td id="name">Wilk</td>
+                            <td colspan="8" class="zajety">7:00-15:00</td>
+                            <td colspan="4" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>6.</td>
+                            <td id="name">Damian</td>
+                            <td id="name">Iksiński</td>
+                            <td>4</td>
+                            <td colspan="4" class="wolny"></td>
+                            <td colspan="8" class="zajety">11:00-19:00</td>
+                        </tr>
+                        <tr>
+                            <td>7.</td>
+                            <td id="name">Anna</td>
+                            <td id="name">Maria</td>
+                            <td rowspan="3">5</td>
+                            <td colspan="3" class="zajety">7:00-10:00</td>
+                            <td colspan="1" class="wolny"></td>
+                            <td colspan="3" class="zajety">11:00-14:00</td>
+                            <td colspan="2" class="wolny"></td>
+                            <td colspan="3" class="zajety">16:00-19:00</td>
+                        </tr>
+                        <tr>
+                            <td>8.</td>
+                            <td id="name">Dorota</td>
+                            <td id="name">Wysocka</td>
+                            <td colspan="5" class="zajety">7:00-12:00</td>
+                            <td colspan="4" class="wolny"></td>
+                            <td colspan="3" class="zajety">16:00-19:00</td>
+                        </tr>
+                        <tr>
+                            <td>9.</td>
+                            <td id="name">Michał</td>
+                            <td id="name">Michałek</td>
+                            <td colspan="2" class="wolny"></td>
+                            <td colspan="4" class="zajety">9:00-13:00</td>
+                            <td colspan="2" class="wolny"></td>
+                            <td colspan="4" class="zajety">15:00-19:00</td>
+                        </tr>
+                        <tr>
+                            <td>10.</td>
+                            <td id="name">Andrzej</td>
+                            <td id="name">Kobza</td>
+                            <td>6</td>
+                            <td colspan="2" class="wolny"></td>
+                            <td colspan="3" class="zajety">9:00-12:00</td>
+                            <td colspan="2" class="wolny"></td>
+                            <td colspan="3" class="zajety">14:00-17:00</td>
+                            <td colspan="2" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>11.</td>
+                            <td>Agnieszka</td>
+                            <td>Kowal</td>
+                            <td>7</td>
+                            <td colspan="4" class="zajety">7:00-11:00</td>
+                            <td colspan="8" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>12.</td>
+                            <td>Paweł</td>
+                            <td>Nowicki</td>
+                            <td>8</td>
+                            <td colspan="6" class="wolny"></td>
+                            <td colspan="6" class="zajety">13:00-19:00</td>
+                        </tr>
+                        <tr>
+                            <td>13.</td>
+                            <td>Marta</td>
+                            <td>Kwiatkowska</td>
+                            <td rowspan="2">9</td>
+
+                            <td colspan="4" class="zajety">7:00-10:00</td>
+                            <td colspan="8" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>14.</td>
+                            <td>Mateusz</td>
+                            <td>Kubicki</td>
+
+                            <td colspan="5" class="wolny"></td>
+                            <td colspan="3" class="zajety">12:00-15:00</td>
+                            <td colspan="4" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>15.</td>
+                            <td>Barbara</td>
+                            <td>Lis</td>
+                            <td>10</td>
+                            <td colspan="3" class="zajety">7:00-10:00</td>
+                            <td colspan="9" class="wolny"></td>
+                        </tr>
+                        <tr>
+                            <td>16.</td>
+                            <td>Oliwia</td>
+                            <td>Nowak</td>
+                            <td>11</td>
+                            <td colspan="6" class="zajety">7:00-13:00</td>
+                            <td colspan="6" class="wolny"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+    </article>
+        <aside>
+            <iframe src="Kontrolki_JS.html">
+            </iframe>
+        </aside>
+        <footer>
+            Projekt wykonany przez Mariannę Jankowską.
+        </footer>
+</body>
+</html>

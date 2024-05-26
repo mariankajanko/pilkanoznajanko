@@ -1,0 +1,166 @@
+﻿body {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    line-height: 1.6;
+}
+
+nav, article, aside {
+    display: block;
+    float: left;
+}
+
+nav {
+    border: 2px solid black;
+    background: #66ccff;
+    width: 15%;
+    height: 100%;
+}
+
+body > article {
+    width: 64%;
+    height: 100%;
+    padding: 5px;
+    border: 1px solid gray;
+    background-color: lightblue;
+    overflow: auto;
+}
+
+body > header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: dodgerblue;
+    text-align: center;
+    padding-top: 10px;
+    border: 3px solid black;
+}
+
+aside {
+    float: right;
+    width: 19%;
+    height: 700px;
+    background-color: dodgerblue;
+}
+
+body > footer {
+    border-width: 8px 6px 4px 2px;
+    border-style: solid;
+    border-color: darkblue;
+    background-color: aliceblue;
+    height: 80px;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Stylizacja menu */
+nav ul, ul li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    width: 190px;
+    padding: 2px 2px 1px 2px;
+    background-color: #9ce;
+    border: 3px double #28e;
+}
+
+    nav ul li {
+        border-bottom: 1px solid #9ce;
+    }
+
+    nav ul a:link, nav ul a:visited {
+        display: block;
+        width: 166px;
+        text-decoration: none;
+        padding: 7px;
+        font-weight: bold;
+        background-color: #27c;
+        color: #def;
+        border-left: 10px solid #25b;
+    }
+
+    nav ul a:hover {
+        width: 156px;
+        background-color: #28e;
+        color: darkblue;
+        border-left: 20px solid #26d;
+    }
+
+/* Zapytania medialne dla responsywności */
+@media (max-width: 768px) {
+    nav ul {
+        width: 150px;
+        padding: 2px 1px 1px 1px;
+        background-color: #9ce;
+        border: 2px double #28e;
+    }
+
+        nav ul a:link, nav ul a:visited {
+            width: 130px;
+            padding: 5px;
+            font-size: 0.9em;
+        }
+
+        nav ul a:hover {
+            width: 120px;
+            padding: 5px;
+            font-size: 0.9em;
+        }
+
+    nav {
+        width: 20%;
+    }
+
+    body > article {
+        width: 60%;
+    }
+
+    aside {
+        width: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav, article, aside {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 100%;
+        padding: 1px;
+        background-color: #9ce;
+        border: 2px double #28e;
+    }
+
+        nav ul a:link, nav ul a:visited {
+            width: 100%;
+            padding: 5px;
+            font-size: 0.8em;
+        }
+
+        nav ul a:hover {
+            width: 100%;
+            padding: 5px;
+            font-size: 0.8em;
+        }
+}

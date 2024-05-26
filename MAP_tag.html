@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prezentacja Piłka Nożna</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <link rel="stylesheet" type="text/css" href="Menu.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .presentation-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+        }
+
+            .slide.active-slide {
+                display: block;
+            }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .presentation-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            img {
+                margin-top: 15px;
+            }
+
+            p {
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .presentation-container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            img {
+                margin-top: 10px;
+            }
+
+            p {
+                margin-top: 5px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+
+</head>
+<body onload="startPresentation()">
+    <header style="background-color:dodgerblue; padding: 2px 0;">
+        <h1>Piłka nożna</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+         
+        </ul>
+    </nav>
+    <article>
+        <h2 style="text-align:center; font-weight:bold;">Jedenastka sezonu</h2>
+        <p><i>Aby poznać jedenastkę sezonu kliakj strzałkę na klawiaturze!</i></p>
+        <div class="presentation-container">
+            <div class="slide active-slide">
+                <h2>Bartosz Mrozek</h2>
+                <img src="bartekmrozek.jpg" alt="Bartosz Mrozek">
+                <p>Bartosz Mrozek (ur. 23 lutego 2000 w Katowicach) – polski piłkarz, występujący na pozycji bramkarza.</p>
+            </div>
+            <div class="slide">
+                <h2>Jesper Karlström</h2>
+                <img src="karlstrom.jpg" alt="Jesper Karlström">
+                <p>Jesper Kewe Karlström (ur. 21 czerwca 1995 w Sztokholmie) – szwedzki piłkarz, występujący na pozycji pomocnika w Lechu Poznań i reprezentacji Szwecji.</p>
+            </div>
+            <div class="slide">
+                <h2>Bartosz Salomon</h2>
+                <img src="salomon.jpg" alt="Bartosz Salomon">
+                <p>Bartosz Salamon (ur. 1 maja 1991 w Poznaniu) – polski piłkarz występujący na pozycji obrońcy w polskim klubie Lech Poznań, reprezentant Polski.</p>
+            </div>
+            <div class="slide">
+                <h2>Joel Pereira</h2>
+                <img src="pereira.jpg" alt="Joel Pereira">
+                <p>
+                    Joel Vieira Pereira (ur. 28 września 1996 w Vila Nova de Gaia) – portugalski piłkarz występujący na pozycji obrońcy w polskim klubie Lech Poznań.
+                </p>
+            </div>
+            <div class="slide">
+                <h2>Radosław Murawski</h2>
+                <img src="murawski.jpg" alt="Radosław Murawski">
+                <p>Radosław Paweł Murawski (ur. 22 kwietnia 1994 w Gliwicach) – polski piłkarz występujący na pozycji pomocnika w polskim klubie Lech Poznań.</p>
+            </div>
+            <div class="slide">
+                <h2>Antonio Milic</h2>
+                <img src="milic.jpg" alt="Antonio Milic">
+                <p>Antonio Milić (ur. 10 marca 1994 w Splicie) – chorwacki piłkarz występujący na pozycji obrońcy w Lechu Poznań. Antonio Milić..</p>
+            </div>
+            <div class="slide">
+                <h2>Elias Andersson</h2>
+                <img src="andersson.jpg" alt="Elias Andersson">
+                <p>Nils Erik Elias Andersson (ur. 31 stycznia 1996 w Hässleholm) – szwedzki piłkarz występujący na pozycji obrońcy w Lechu Poznań oraz w reprezentacji Szwecji.</p>
+            </div>
+            <div class="slide">
+                <h2>Adriel Ba Loua</h2>
+                <img src="ba loua.jpg" alt="Adriel Ba Loua">
+                <p>
+                    Adriel D'Avila Ba Loua (ur. 25 lipca 1996 w Abidżanie) – iworyjski piłkarz występujący na pozycji pomocnika w Lechu Poznań.
+                </p>
+            </div>
+            <div class="slide">
+                <h2>Filip Marchwinski</h2>
+                <img src="marchwinski.jpg" alt="Filip Marchwiński">
+                <p>Filip Marchwiński (ur. 10 stycznia 2002 w Poznaniu) – polski piłkarz, występujący na pozycji pomocnika w polskim klubie Lech Poznań.</p>
+            </div>
+            <div class="slide">
+                <h2>Kristoffer Velde</h2>
+                <img src="velde.jpg" alt="Kristoffer Velde">
+                <p>
+                    Kristoffer Velde (ur. 9 września 1999 w Haugesund) – norweski piłkarz występujący na pozycji pomocnika w Lechu Poznań.
+                </p>
+            </div>
+            <div class="slide">
+                <h2>Mikael Ishak</h2>
+                <img src="ishak.jpg" alt="Mikael Ishak">
+                <p>Mikael Ishak (ur. 31 marca 1993 w Södertälje) – szwedzki piłkarz asyryjskiego pochodzenia występujący na pozycji napastnika w Lechu Poznań.</p>
+            </div>
+        </div>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Strona wykonana przez Mariannę Jankowską.
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active-slide');
+                if (i === index) {
+                    slide.classList.add('active-slide');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        function startPresentation() {
+            showSlide(currentSlide);
+        }
+    </script>
+</body>
+</html>
+

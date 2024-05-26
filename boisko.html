@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Narysuj z nami boisko!</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <link rel="stylesheet" type="text/css" href="Menu.css" />
+    <style>
+        #footballCanvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #000;
+            background-color: #228B22; /* Green field */
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+            .button-container button {
+                margin: 5px;
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+    <header style="background-color:dodgerblue">
+        <h1>Piłka Nożna - Lech Poznań</h1>
+    </header>
+    <nav>
+
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+
+        </ul>
+    </nav>
+    <article>
+        <h2>Widok stadionu - narysuj boisko Piłkarzy Lecha Poznań</h2>
+        <canvas id="footballCanvas" width="600" height="400"></canvas>
+        <div class="button-container">
+            <button onclick="drawGrass()">Rysuj Trawę</button>
+            <button onclick="drawFieldLines()">Rysuj Linie Boiska</button>
+            <button onclick="drawCenterCircle()">Rysuj Środkowe Koło</button>
+            <button onclick="drawGoals()">Rysuj Bramki</button>
+            <button onclick="drawBall()">Rysuj Piłkę</button>
+        </div>
+        <script>
+            var canvas = document.getElementById('footballCanvas');
+            var ctx = canvas.getContext('2d');
+
+            function drawGrass() {
+                // Trawa
+                ctx.fillStyle = '#228B22';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+            function drawFieldLines() {
+                // Linie boiska
+                ctx.strokeStyle = '#FFF';
+                ctx.lineWidth = 2;
+
+                // Środkowa linia
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 2, 0);
+                ctx.lineTo(canvas.width / 2, canvas.height);
+                ctx.stroke();
+
+                // Pole karne lewe
+                ctx.strokeRect(0, (canvas.height / 2) - 80, 60, 160);
+
+                // Pole karne prawe
+                ctx.strokeRect(canvas.width - 60, (canvas.height / 2) - 80, 60, 160);
+            }
+
+            function drawCenterCircle() {
+                // Środkowe koło
+                ctx.strokeStyle = '#FFF';
+                ctx.lineWidth = 2;
+
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                // Punkt środkowy
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, 2 * Math.PI);
+                ctx.fillStyle = '#FFF';
+                ctx.fill();
+            }
+
+            function drawGoals() {
+                // Bramki
+                ctx.strokeStyle = '#FFF';
+                ctx.lineWidth = 2;
+
+                ctx.strokeRect(0, (canvas.height / 2) - 40, 20, 80);
+                ctx.strokeRect(canvas.width - 20, (canvas.height / 2) - 40, 20, 80);
+            }
+
+            function drawBall() {
+                // Piłka
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 10, 0, 2 * Math.PI);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fill();
+                ctx.stroke();
+            }
+        </script>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Projekt wykonany przez Mariannę Jankowską.
+    </footer>
+</body>
+</html>
+

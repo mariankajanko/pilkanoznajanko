@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIiSKwE</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css">
+    <link rel="stylesheet" type="text/css" href="Menu.css">
+    <style>
+        /* Dodajemy nowy styl dla prezentacji */
+        .presentation-container {
+            display: none;
+            text-align: center;
+            margin: auto;
+            width: 60%;
+            background-color: lightgrey;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .slide {
+            display: none;
+        }
+
+            .slide img {
+                max-width: 100%;
+                height: auto;
+            }
+    </style>
+</head>
+<body>
+    <header style="background-color: dodgerblue; text-align: center;">
+        <h1>Lech Poznań</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+       
+        </ul>
+    </nav>
+    <article>
+        <h2>Nadchodzące mecze Lecha Poznań</h2>
+        <p>Zapraszamy na najbliższe spotkania Lecha Poznań. Śledź harmonogram na naszej stronie!</p>
+        <!-- Tutaj dodajemy formularz lub inne elementy strony -->
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer style="text-align: center;">
+        Projekt wykonany przez Mariannę Jankowską.
+    </footer>
+
+    <!-- Dodajemy sekcję dla prezentacji -->
+    <div class="presentation-container">
+        <div class="slide">
+            <h2>Lech Poznań</h2>
+            <img src="1slajd.jpg" alt="Lech Poznań Logo">
+            <p>Lech Poznań to jeden z najbardziej znanych klubów piłkarskich w Polsce.</p>
+        </div>
+        <div class="slide">
+            <h2>Historia</h2>
+            <img src="historialechapoznan.jpg" alt="Historia Lecha Poznań">
+            <p>Klub został założony w 1922 roku i od tego czasu odnosi wiele sukcesów.</p>
+        </div>
+        <div class="slide">
+            <h2>Sukcesy</h2>
+            <img src="trofea.jpg" alt="Trofea Lecha Poznań">
+            <p>Lech Poznań jest wielokrotnym mistrzem Polski i zdobywcą Pucharu Polski.</p>
+        </div>
+        <div class="slide">
+            <h2>Stadion</h2>
+            <img src="stadion.jpg" alt="Stadion Lecha Poznań">
+            <p>Lech Poznań swoje mecze rozgrywa na stadionie Enea w Poznaniu.</p>
+        </div>
+        <div class="slide">
+            <h2>Kibice</h2>
+            <img src="kibice.jpg" alt="Kibice Lecha Poznań">
+            <p>Kibice Lecha Poznań znani są ze swojego gorącego wsparcia dla drużyny.</p>
+        </div>
+    </div>
+
+    <script>
+        // Funkcja otwierająca prezentację
+        function openPresentation() {
+            document.querySelector('.presentation-container').style.display = 'block';
+            showSlide(0); // Pokaż pierwszy slajd po otwarciu prezentacji
+        }
+
+        // Funkcja ukrywająca wszystkie slajdy
+        function hideSlides() {
+            var slides = document.querySelectorAll('.slide');
+            slides.forEach(function (slide) {
+                slide.style.display = 'none';
+            });
+        }
+
+        // Funkcja pokazująca określony slajd
+        function showSlide(slideIndex) {
+            hideSlides(); // Najpierw ukryj wszystkie slajdy
+            var slides = document.querySelectorAll('.slide');
+            if (slideIndex >= 0 && slideIndex < slides.length) {
+                slides[slideIndex].style.display = 'block';
+            }
+        }
+
+        // Obsługa nawigacji między slajdami za pomocą strzałek na klawiaturze
+        document.addEventListener('keydown', function (event) {
+            var slides = document.querySelectorAll('.slide');
+            var currentIndex = -1;
+            slides.forEach(function (slide, index) {
+                if (slide.style.display === 'block') {
+                    currentIndex = index;
+                }
+            });
+            if (event.key === 'ArrowLeft') {
+                showSlide(currentIndex - 1);
+            } else if (event.key === 'ArrowRight') {
+                showSlide(currentIndex + 1);
+            }
+        });
+    </script>
+</body>
+</html>

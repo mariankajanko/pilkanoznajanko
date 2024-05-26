@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lech Poznań - Fan Page</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css">
+    <link rel="stylesheet" type="text/css" href="Menu.css">
+    <style>
+        /* Dodatkowe style dla strony */
+        #teams-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            #teams-table th, #teams-table td {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: center;
+            }
+
+            #teams-table th {
+                background-color: dodgerblue;
+                color: white;
+            }
+
+        #add-team-form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            #add-team-form input[type="text"], #add-team-form input[type="submit"] {
+                padding: 8px;
+                margin: 5px;
+            }
+
+            #add-team-form input[type="submit"] {
+                background-color: dodgerblue;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+        #history, #news, #quiz {
+            margin: 20px 0;
+        }
+
+            #quiz input[type="text"], #quiz input[type="submit"] {
+                padding: 8px;
+                margin: 5px;
+            }
+
+            #quiz input[type="submit"] {
+                background-color: dodgerblue;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+        .quiz-question {
+            margin: 10px 0;
+        }
+
+        .quiz-result {
+            margin: 20px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color:dodgerblue">
+        <h1>Lech Poznań - Fan Page</h1>
+    </header>
+    <nav>
+        <h2 style="text-align: center;">Menu:</h2>
+        <ul style="text-align: center;">
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Tabelka.html" target="_self">Pracownicy</a></li>
+            <li><a href="Info.html" target="_self">Informacje</a></li>
+            <li><a href="Form.html" target="_self">Formularz zgłoszeniowy</a></li>
+            <li><a href="MAP_tag.html" target="_self">Piłkarze</a></li>
+            <li><a href="JavaScript1.html" target="_self">Pierwsza drużyna</a></li>
+            <li><a href="boisko.html" target="_self">Narysuj boisko Lecha</a></li>
+            <li><a href="Wyliczswojebmi.html" target="_self">Wylicz swoje BMI!</a></li>
+            <li><a href="Canvas1.html" target="_self">Nadchodzące mecze</a></li>
+            <li><a href="Canvas2.html" target="_self">Widok stadionu</a></li>
+            <li><a href="Canvas21.html" target="_self">Quiz</a></li>
+        </ul>
+    </nav>
+    <article>
+        
+        <section id="Quiz">
+            <h2></h2>
+            <p style="text-align:center; font-size:medium;">
+                Jesteś zagorzałym kibicem Lecha Poznań i chcesz sprawdzić swoją wiedzę?
+            </p>
+            <p style="font-weight:bold; text-align:center; font-size:large"> Już teraz przekonaj się ile wiesz o naszym klubie!</p>
+        </section>
+       
+        
+        <section id="quiz">
+            <h2>Quiz o Lechu Poznań</h2>
+            <form id="quiz-form">
+                <div class="quiz-question">
+                    <label for="question1">1. W którym roku założono Lecha Poznań?</label>
+                    <input type="text" id="question1" name="question1" placeholder="Twoja odpowiedź">
+                </div>
+                <div class="quiz-question">
+                    <label for="question2">2. Ile razy Lech Poznań zdobył mistrzostwo Polski?</label>
+                    <input type="text" id="question2" name="question2" placeholder="Twoja odpowiedź">
+                </div>
+                <div class="quiz-question">
+                    <label for="question3">3. Jak nazywa się stadion Lecha Poznań?</label>
+                    <input type="text" id="question3" name="question3" placeholder="Twoja odpowiedź">
+                </div>
+                <input type="submit" value="Sprawdź odpowiedzi">
+            </form>
+            <div id="quiz-result" class="quiz-result"></div>
+        </section>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Projekt wykonany przez Mariannę Jankowską.
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("add-team-form");
+            const tableBody = document.getElementById("teams-list");
+            const quizForm = document.getElementById("quiz-form");
+            const quizResult = document.getElementById("quiz-result");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const teamName = document.getElementById("team-name").value;
+                const teamPosition = document.getElementById("team-position").value;
+
+                if (teamName && teamPosition) {
+                    const newRow = document.createElement("tr");
+                    newRow.innerHTML = `
+                                <td>${teamPosition}</td>
+                                <td>${teamName}</td>
+                            `;
+                    tableBody.appendChild(newRow);
+                    form.reset();
+                }
+            });
+
+            quizForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const answers = {
+                    question1: "1922",
+                    question2: "8",
+                    question3: "Enea Stadion"
+                };
+
+                const userAnswers = {
+                    question1: document.getElementById("question1").value.trim(),
+                    question2: document.getElementById("question2").value.trim(),
+                    question3: document.getElementById("question3").value.trim()
+                };
+
+                let score = 0;
+                for (let question in answers) {
+                    if (answers[question].toLowerCase() === userAnswers[question].toLowerCase()) {
+                        score++;
+                    }
+                }
+
+                quizResult.textContent = `Twój wynik: ${score}/3`;
+            });
+        });
+    </script>
+</body>
+</html>
